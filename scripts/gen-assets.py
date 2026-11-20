@@ -7,7 +7,8 @@ from fontTools.ttLib import TTFont
 from fontTools.pens.svgPathPen import SVGPathPen
 from fontTools.pens.transformPen import TransformPen
 
-FONTS = "~/Projects/RznType/RznSans/fonts/desktop"
+# Directory holding RznSans-<weight>.ttf (desktop builds of the RznSans family).
+FONTS = os.environ.get("RZNSANS_FONTS") or sys.exit("set RZNSANS_FONTS to the RznSans desktop fonts directory")
 OUT = sys.argv[1]
 _cache = {}
 
